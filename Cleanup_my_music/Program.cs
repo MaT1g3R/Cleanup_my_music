@@ -17,7 +17,8 @@ namespace Cleanup_my_music
         }
         static void Test() {
             //TEST COMMIT
-            
+            TagLib.File newfile = TagLib.File.Create("filename");
+            newfile.Tag.Genres = new String[] { "some genre" };
         }
     }
 }

@@ -76,6 +76,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\taglib-sharp\src\taglib-sharp.csproj">
+      <Project>{6b143a39-c7b2-4743-9917-92262c60e9a6}</Project>
+      <Name>taglib-sharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\taglib-sharp\tests\tests.csproj">
+      <Project>{4d1c6110-d6f2-496e-bd7e-e45b7217d458}</Project>
+      <Name>tests</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

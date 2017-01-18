@@ -20,6 +20,7 @@ namespace Cleanup_my_music
             TagLib.File newfile = TagLib.File.Create("filename");
             newfile.Tag.Genres = new String[] { "some genre" };
             //this is a comment thats very useful
+            //dont include
         }
     }
 }

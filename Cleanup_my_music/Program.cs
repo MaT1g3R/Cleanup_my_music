@@ -21,6 +21,7 @@ namespace Cleanup_my_music
             newfile.Tag.Genres = new String[] { "some genre" };
             //this is a comment thats very useful
             //dont include
+            // so this shit work now?
         }
     }
 }

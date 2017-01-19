@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Cleanup_my_music
-{
-    static class Program
-    {
+namespace Cleanup_my_music {
+    static class Program {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main(){
+        static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

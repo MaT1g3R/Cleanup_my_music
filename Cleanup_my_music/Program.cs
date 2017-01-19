@@ -14,7 +14,11 @@ namespace Cleanup_my_music {
             //MessageBox.Show("this is how you debug");
             string testingDir = "C://Users//MaT1g3R//Desktop//Testing Directory";
             string myWholeLibrary = "A://Music";
-            List<string> files = FileSystem.getFiles(myWholeLibrary);
+
+            //Still needs further testing
+            List<string> files = FileSystem.getFiles(myWholeLibrary); //168ms, 168ms
+            List<string> files0 = FileSystem.getFiles0(myWholeLibrary); //166ms, 165ms
+
             Application.Run(new mainWindow());
             //System.Diagnostics.Debug.Write("Or is this how you debug");
             //Actually tho please use the debugger

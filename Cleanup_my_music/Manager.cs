@@ -13,12 +13,16 @@ namespace Cleanup_my_music{
         //array list of song paths
         private int test;
         public int MyProperty { get; set; }
-        //takes in an array list
+        /// <summary>
+        /// <param name="some array list"> a playlist </param>
+        /// </summary>
         public Manager(/*playlist string array*/) {
             //array list = playlist
         }
 
-        //this is an example search for number of missing [x] tags
+        /// <summary>
+        /// <param name="[x]"> a tag to search for files which are missing this </param>
+        /// </summary>
         public void findMissingX(/*[x]*/) {
             /* for (int i = 0;i<=arraylist.length;i++){
                     if(arraylist[i].tag == null

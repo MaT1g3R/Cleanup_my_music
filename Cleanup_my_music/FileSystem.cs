@@ -12,14 +12,14 @@ namespace Cleanup_my_music {
     /// </summary>
     public static class FileSystem {
         /// <summary>
-        /// The allowed format, add more to this later
+        /// The allowed format, can easily expand this later
         /// </summary>
         private static string allowedExtentions = "*.mp3,*.flac,*.m4a,*.wav";
 
         /// <summary>
-        /// Get the files from the user path.
+        /// Get the files from param "root", with correct filters applied.
         /// </summary>
-        /// <param name="root">The user input path.</param>
+        /// <param name="root">Valid path to a root folder.</param>
         /// <returns>
         /// A list containing all media file paths under the root folder
         /// </returns>

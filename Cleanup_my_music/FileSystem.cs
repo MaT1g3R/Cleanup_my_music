@@ -11,14 +11,13 @@ namespace Cleanup_my_music
     /// </summary>
     class FileSystem
     {
+        private string folderPath;
+        
         ///Initialize the FileSystem object from a valid folder path
         ///<param name="folderPath> A vaild path on the computer. </param>
         ///<returns> A object containing all media files under the path </returns>
         public FileSystem(String folderPath) {
-            
-
+            this.folderPath = folderPath;
         }
-        
-
     }
 }

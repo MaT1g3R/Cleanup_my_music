@@ -77,7 +77,7 @@ namespace Cleanup_my_music {
         /// </summary>
         /// <param name="root">Valid path to a root folder.</param>
         /// <returns>A list containing all media file paths under the root folder</returns>
-        public static List<string> getFiles1(string 0){
+        public static List<string> getFiles1(string root){
             string[] directories = Directory.GetDirectories(root);
             //In this implementation I will use a removal approach instead of a filter approcah
             string[] directories = Directory.GetDirectories(root);

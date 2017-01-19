@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Cleanup_my_music {
     static class Program {
@@ -10,18 +11,12 @@ namespace Cleanup_my_music {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-        }
-        static void Test() {
-            //TEST COMMIT
-            TagLib.File newfile = TagLib.File.Create("filename");
-            newfile.Tag.Genres = new String[] { "some genre" };
-            //this is a comment thats very useful
-            //dont include
-            // so this shit work now?
-            //does this shit work?
-            //dank ass memes ( ͡° ͜ʖ ͡°)
-
+            //MessageBox.Show("this is how you debug");
+            string testingDir = "C://Users//MaT1g3R//Desktop//Testing Directory";
+            List<string> files = FileSystem.getFiles(testingDir);
+            Application.Run(new mainWindow());
+            //System.Diagnostics.Debug.Write("Or is this how you debug");
+            //Actually tho please use the debugger
         }
     }
 }

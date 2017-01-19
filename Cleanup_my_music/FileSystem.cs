@@ -1,26 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Cleanup_my_music {
     /// <summary>
     /// The FileSystem class will get all paths of media files under a root folder.
     /// </summary>
-    class FileSystem {
+    public static class FileSystem {
         /// <summary>
-        /// The folder path
+        /// The allowed format, add more to this later
         /// </summary>
-        private string folderPath;
+        private static string allowedExtentions = "*.mp3,*.flac,*.m4a,*.wav";
 
-        ///Initialize the FileSystem object from a valid folder path
-        ///<param> name="folderPath" a valid folder path on the computer </param>
-        ///<returns> A object containing all media files under the path </returns>
-        public FileSystem(String folderPath) {
-            this.folderPath = folderPath;
+        /// <summary>
+        /// Get the files from the user path.
+        /// </summary>
+        /// <param name="root">The user input path.</param>
+        /// <returns>
+        /// A list containing all media file paths under the root folder
+        /// </returns>
+        public static List<string> getFiles(string root) {
+            string[] directories = Directory.GetDirectories(root);
+
+            //this will get all the files with the allowed extention
+            List<string> files = allowedExtentions.Split(',').SelectMany(filter => Directory.GetFiles(root, filter)).ToList();
+
+            if (directories.Length <= 0) {
+                return files;
+            } else {
+                foreach (string d in directories) {
+                    files.AddRange(getFiles(d));
+                }
+                return files;
+            }
         }
     }
 }
+

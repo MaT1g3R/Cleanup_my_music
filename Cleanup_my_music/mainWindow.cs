@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cleanup_my_music
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
+namespace Cleanup_my_music {
+    public partial class mainWindow : Form {
+        public mainWindow() {
             InitializeComponent();
+        }
+
+        private void mainWindow_Load(object sender, EventArgs e) {
+
         }
     }
 }

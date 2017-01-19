@@ -40,7 +40,8 @@ namespace Cleanup_my_music {
 
             if (directories.Length <= 0) {
                 return files;
-            } else {
+            }
+            else {
                 foreach (string d in directories) {
                     files.AddRange(getFiles(d));
                 }
@@ -64,9 +65,10 @@ namespace Cleanup_my_music {
 
             if (directories.Length <= 0) {
                 return files0;
-            } else {
+            }
+            else {
                 foreach (string d in directories) {
-                    files0.AddRange(getFiles(d));
+                    files0.AddRange(getFiles(d));//@MaT1g3r is this meant to be calling method 1 or itself?
                 }
                 return files0;
             }
@@ -77,32 +79,35 @@ namespace Cleanup_my_music {
         /// </summary>
         /// <param name="root">Valid path to a root folder.</param>
         /// <returns>A list containing all media file paths under the root folder</returns>
-        public static List<string> getFiles1(string root){
+
+        public static List<string> getFiles1(string root) {
             string[] directories = Directory.GetDirectories(root);
             //In this implementation I will use a removal approach instead of a filter approcah
-            string[] directories = Directory.GetDirectories(root);
+            //string[] directories = Directory.GetDirectories(root);
 
-            List<string> files = Directory.GetFiles(root);
-            List<string> validFiles;
+            List<string> files = Directory.GetFiles(root).ToList();
+            List<string> validFiles = null;
 
-            foreach(string f in files){
-                foreach(string ex in allowedExList0){
-                    if f.EndWith(ex){
+            foreach (string f in files) {
+                foreach (string ex in allowedExList0) {
+                    if (f.EndsWith(ex)) {
                         validFiles.Add(f);
                         break;
-                    }    
+                    }
                 }
             }
-            
+
             if (directories.Length <= 0) {
                 return validFiles;
-            } else {
+            }
+            else {
                 foreach (string d in directories) {
                     validFiles.AddRange(getFiles1(d));
                 }
                 return validFiles;
             }
         }
+
     }
 }
 

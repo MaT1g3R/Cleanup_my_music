@@ -12,10 +12,9 @@ namespace Cleanup_my_music {
     ///Ideally [MaT1g3R] wants this to report the numbers and the list of songs missing metadata, and some sort of mass set options.
     ///</summary>
     class Manager {
-        ///int for number missing of tag type [whatever]
-        ///array list of song paths
-        private int test;
-        public int MyProperty { get; set; }
+
+        List<string> files = FileSystem.getFiles("E://tixati");
+
         ///takes in an array list
         public Manager(/*playlist string array*/) {
             //array list = playlist
@@ -23,11 +22,9 @@ namespace Cleanup_my_music {
 
         //this is an example search for number of missing [x] tags
         public void findMissingX(/*[x]*/) {
-            /* for (int i = 0;i<=arraylist.length;i++){
-                    if(arraylist[i].tag == null
-                        missingX++;
-               }
-            */
+            foreach (string f in files) {
+                //i honestly have no idea what im doing, but this should check if the f its looking has that tag
+            }
         }
     }
 }

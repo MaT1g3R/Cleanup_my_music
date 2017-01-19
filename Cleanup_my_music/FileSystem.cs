@@ -42,21 +42,20 @@ namespace Cleanup_my_music {
             }
         }
 
-
-
         /// <summary>
-        /// Another get files implemtation
+        /// Another get files implementation
         /// </summary>
         /// <param name="root">Valid path to a root folder.</param>
         /// <returns>A list containing all media file paths under the root folder</returns>
         public static List<string> getFiles0(string root) {
-            //another implemtation
             string[] directories = Directory.GetDirectories(root);
 
+            //another implemtation
             List<string> files0 = new List<string> { };
             foreach (string ex in allowedExList) {
                 files0.AddRange(Directory.GetFiles(root, ex));
             }
+
             if (directories.Length <= 0) {
                 return files0;
             } else {

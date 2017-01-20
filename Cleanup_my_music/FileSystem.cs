@@ -1,10 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Collections;
+﻿using System.IO;
 using System.Collections.Generic;
+using System.Windows.Forms;
+
 
 namespace Cleanup_my_music {
     /// <summary>
@@ -12,102 +9,58 @@ namespace Cleanup_my_music {
     /// </summary>
     public static class FileSystem {
         /// <summary>
-        /// The allowed format, can easily expand this later
+        /// The arrary of allowed format
         /// </summary>
-        private static string allowedExtentions = "*.mp3,*.flac,*.m4a,*.wav";
+        private static string[] allowedFormat = { ".mp3", ".flac", ".m4a", ".wav" };
 
         /// <summary>
-        /// The allowed format in a list, used for another implemtation
+        /// Get all files with the allowed format under the root folder
         /// </summary>
-        private static string[] allowedExList = { "*.mp3", "*.flac", "*.m4a", "*.wav" };
-
-        ///<summary>
-        /// Another list of extentions for the 3rd implementation
-        ///</summary>
-        private static string[] allowedExList0 = { ".mp3", ".flac", ".m4a", ".wav" };
-
-        /// <summary>
-        /// Get the files from param "root", with correct filters applied.
-        /// </summary>
-        /// <param name="root">Valid path to a root folder.</param>
-        /// <returns>
-        /// A list containing all media file paths under the root folder
-        /// </returns>
+        /// <param name="root">(hopefully) valid path to a root folder.</param>
+        /// <returns>A list containing all media file paths under the root folder</returns>
         public static List<string> getFiles(string root) {
-            string[] directories = Directory.GetDirectories(root);
-            //this will get all the files with the allowed extention
-            List<string> files = allowedExtentions.Split(',').SelectMany(filter => Directory.GetFiles(root, filter)).ToList();
+            try {
+                string[] directories = Directory.GetDirectories(root);
+                string[] files = Directory.GetFiles(root);
 
-            if (directories.Length <= 0) {
-                return files;
-            }
-            else {
-                foreach (string d in directories) {
-                    files.AddRange(getFiles(d));
-                }
-                return files;
-            }
-        }
+                List<string> validFiles = new List<string> { };
 
-        /// <summary>
-        /// Another get files implementation
-        /// </summary>
-        /// <param name="root">Valid path to a root folder.</param>
-        /// <returns>A list containing all media file paths under the root folder</returns>
-        public static List<string> getFiles0(string root) {
-            string[] directories = Directory.GetDirectories(root);
-
-            //another implemtation
-            List<string> files0 = new List<string> { };
-            foreach (string ex in allowedExList) {
-                files0.AddRange(Directory.GetFiles(root, ex));
-            }
-
-            if (directories.Length <= 0) {
-                return files0;
-            }
-            else {
-                foreach (string d in directories) {
-                    files0.AddRange(getFiles(d));//@MaT1g3r is this meant to be calling method 1 or itself?
-                }
-                return files0;
-            }
-        }
-
-        /// <summary>
-        /// Yet another get files implementation
-        /// </summary>
-        /// <param name="root">Valid path to a root folder.</param>
-        /// <returns>A list containing all media file paths under the root folder</returns>
-
-        public static List<string> getFiles1(string root) {
-            string[] directories = Directory.GetDirectories(root);
-            //In this implementation I will use a removal approach instead of a filter approcah
-            //string[] directories = Directory.GetDirectories(root);
-
-            List<string> files = Directory.GetFiles(root).ToList();
-            List<string> validFiles = null;
-
-            foreach (string f in files) {
-                foreach (string ex in allowedExList0) {
-                    if (f.EndsWith(ex)) {
+                foreach (string f in files) {
+                    if (isAllowedFormat(f)) {
                         validFiles.Add(f);
-                        break;
                     }
                 }
-            }
 
-            if (directories.Length <= 0) {
-                return validFiles;
-            }
-            else {
-                foreach (string d in directories) {
-                    validFiles.AddRange(getFiles1(d));
+                if (directories.Length <= 0) {
+                    return validFiles;
+                } else {
+                    foreach (string d in directories) {
+                        validFiles.AddRange(getFiles(d));
+                    }
+                    return validFiles;
                 }
-                return validFiles;
+
+            } catch (System.IO.DirectoryNotFoundException) {
+                MessageBox.Show("Please enter a valid Directory");
+                return null;
             }
         }
 
+        /// <summary>
+        /// Determines whether a file has allowed format.
+        /// </summary>
+        /// <param name="file">The file.</param>
+        /// <returns>
+        ///   <c>true</c> if the file has allowed format; otherwise, <c>false</c>.
+        /// </returns>
+        private static bool isAllowedFormat(string file) {
+            foreach (string ex in allowedFormat) {
+                if (file.EndsWith(ex)) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
 

@@ -18,12 +18,12 @@ namespace Cleanup_my_music {
             //Debug goes below this line------------------------------------------------------
 
             //MessageBox.Show("this is how you debug");
+            //System.Diagnostics.Debug.Write("Or is this how you debug");
+            //Actually tho please use the debugger
+
             //string testingDir = "C://Users//MaT1g3R//Desktop//Testing Directory";
             //string myWholeLibrary = "E://tixati";
             //string myMusic = "A://Music";
-
-            //System.Diagnostics.Debug.Write("Or is this how you debug");
-            //Actually tho please use the debugger
             //List<string> notVaildPathFiles = FileSystem.getFiles("some nonsense");
             //List<string> files = FileSystem.getFiles(myMusic);
         }

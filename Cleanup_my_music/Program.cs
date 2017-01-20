@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace Cleanup_my_music {
     static class Program {
@@ -25,10 +26,14 @@ namespace Cleanup_my_music {
 			//string testingDir = "C://Users//MaT1g3R//Desktop//Testing Directory";
 			//string myWholeLibrary = "E://tixati";
 			//string myMusic = "A://Music";
-			//string macMusic = "SSD://Users//PeijunsMac";
+			//string macAnimes = "/Users/PeijunsMac/Desktop/Animu";
 			//List<string> notVaildPathFiles = FileSystem.getFiles("some nonsense");
 			//List<string> files = FileSystem.getFiles(myMusic);
-			MessageBox.Show(testCodeRunTime(100).ToString());
+
+			//MessageBox.Show(testCodeRunTime(200).ToString());
+			//method 1 avg on mac is 9.575 over 200 runs on macAnimes dir
+			//method 2 avg on mac is 10.23 over 200 runs on macAnimes dir
+			//method 3 avg on mac is 2.7 over 200 runs on macAnimes dir
 		}
 
         /// <summary>
@@ -42,8 +47,7 @@ namespace Cleanup_my_music {
 
             Stopwatch stopwatch = Stopwatch.StartNew();
             for (int i = 0; i < times; i++) {
-				List<string> files = FileSystem.getFiles("/Users/PeijunsMac");
-				files.Clear();
+				List<string> files = FileSystem.getFiles3("nonesense");
             }
             stopwatch.Stop();
             double total = stopwatch.ElapsedMilliseconds;

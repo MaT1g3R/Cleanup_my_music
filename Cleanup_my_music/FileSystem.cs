@@ -12,7 +12,7 @@ namespace Cleanup_my_music {
         /// <summary>
         /// The arrary of allowed format
         /// </summary>
-        private static string[] allowedFormat = { ".mp3", ".flac", ".m4a", ".wav" };
+        private static string[] allowedFormat = { "*.mp3", "*.flac", "*.m4a", "*.wav","*.mkv" };
 
         /// <summary>
         /// Get all files with the allowed format under the root folder
@@ -47,19 +47,19 @@ namespace Cleanup_my_music {
             }
         }
 
-		public static IEnumerable<string> getFiles2(string root) {
+		public static List<string> getFiles2(string root) {
 			try
 			{
 				IEnumerable<string> directories = Directory.EnumerateDirectories(root);
 				IEnumerable<string> files = Directory.EnumerateFiles(root);
 
-				IEnumerable<string> validFiles = new string[] { };
+				var validFiles = new List<string>() { };
 
 				foreach (string f in files)
 				{
 					if (isAllowedFormat(f))
 					{
-						validFiles.Concat(new[] {f});
+						validFiles.Add(f);
 					}
 				}
 
@@ -69,7 +69,7 @@ namespace Cleanup_my_music {
 				else {
 					foreach (string d in directories)
 					{
-						validFiles.Concat(getFiles2(d));
+						validFiles.AddRange(getFiles2(d));
 					}
 					return validFiles;
 				}
@@ -82,19 +82,19 @@ namespace Cleanup_my_music {
 			}
 		}
 
-		public static IEnumerable<string> getFiles3(string root)
+		public static List<string> getFiles3(string root)
 		{
 			try
 			{
 				IEnumerable<string> directories = Directory.EnumerateDirectories(root);
-				IEnumerable<string> files="*.mp3|*.flac|*.m4a|*.wav".Split('|').SelectMany(filter => System.IO.Directory.EnumerateFiles(root, filter));
+				List<string> files =  allowedFormat.SelectMany(filter => System.IO.Directory.EnumerateFiles(root, filter)).ToList();
 				if(directories == null || !directories.Any()){
 					return files;
 				}
 				else {
 					foreach (string d in directories)
 					{
-						files.Concat(getFiles3(d));
+						files.AddRange(getFiles3(d));
 					}
 					return files;
 				}
@@ -105,9 +105,6 @@ namespace Cleanup_my_music {
 				return null;
 			}
 		}
-
-
-
 
         /// <summary>
         /// Determines whether a file has allowed format.

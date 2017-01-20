@@ -13,25 +13,44 @@ namespace Cleanup_my_music {
     ///</summary>
     class Manager {
 
-        List<string> files = null;
-        List<string> missingGenre = null;
+        private List<Song> songs = null;
+        public List<Song> missingGenre { get; set; }
+        public List<Song> missingArtist { get; set; }
+        public List<Song> missingAlbum { get; set; }
+        public List<Song> missingTitle { get; set; }
 
 
         ///takes in an array list
-        public Manager(List<string> playlist) {
-            files = playlist;
+        public Manager(List<Song> playlist) {
+            songs = playlist;
 
         }
 
-        //this is an example search for number of missing [x] tags
-        public int findMissingGenre() {
-            foreach (string f in files) {
-                if (true) {//lmao
-                    missingGenre.Add(f);
+        //this is an example search for number of missing tags, does this even need to return the value or just save it
+        public void findMissing() {
+            foreach (Song song in songs) {
+                if (song.genre == "") {
+                    missingGenre.Add(song);
+                }
+                if (song.artist == "") {
+                    missingArtist.Add(song);
+                }
+                if (song.album == "") {
+                    missingAlbum.Add(song);
+                }
+                if (song.title == "") {
+                    missingTitle.Add(song);
                 }
             }
+            //is this literally all this class is supposed to do
 
-            return missingGenre.Count;
+        }
+
+        public void massSet(List<Song> files, Tag tag, String content) {//hopefully this will actually be able to take a tag, or ill need to make a method for each type of tag
+            //which is more code
+            foreach (Song song in files) {
+                song.Tag = content;
+            }
         }
     }
 }

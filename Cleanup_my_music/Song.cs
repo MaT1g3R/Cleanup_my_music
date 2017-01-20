@@ -12,7 +12,9 @@ namespace Cleanup_my_music {
 
         private string path;
         private string name;
-        private string genre;
+        public string genre {
+            get;
+        }
         //what am i doing, i dont think anything in here works, please put me down
 
         /// <summary>

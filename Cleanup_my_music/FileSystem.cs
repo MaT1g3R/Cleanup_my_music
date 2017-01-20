@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Linq;
 
 
 namespace Cleanup_my_music {
@@ -23,7 +24,7 @@ namespace Cleanup_my_music {
                 string[] directories = Directory.GetDirectories(root);
                 string[] files = Directory.GetFiles(root);
 
-                List<string> validFiles = new List<string> { };
+                var validFiles = new List<string> { };
 
                 foreach (string f in files) {
                     if (isAllowedFormat(f)) {
@@ -45,6 +46,68 @@ namespace Cleanup_my_music {
                 return null;
             }
         }
+
+		public static IEnumerable<string> getFiles2(string root) {
+			try
+			{
+				IEnumerable<string> directories = Directory.EnumerateDirectories(root);
+				IEnumerable<string> files = Directory.EnumerateFiles(root);
+
+				IEnumerable<string> validFiles = new string[] { };
+
+				foreach (string f in files)
+				{
+					if (isAllowedFormat(f))
+					{
+						validFiles.Concat(new[] {f});
+					}
+				}
+
+				if (directories == null || !directories.Any()){
+					return validFiles;
+				}
+				else {
+					foreach (string d in directories)
+					{
+						validFiles.Concat(getFiles2(d));
+					}
+					return validFiles;
+				}
+
+			}
+			catch (System.IO.DirectoryNotFoundException)
+			{
+				MessageBox.Show("Please enter a valid Directory");
+				return null;
+			}
+		}
+
+		public static IEnumerable<string> getFiles3(string root)
+		{
+			try
+			{
+				IEnumerable<string> directories = Directory.EnumerateDirectories(root);
+				IEnumerable<string> files="*.mp3|*.flac|*.m4a|*.wav".Split('|').SelectMany(filter => System.IO.Directory.EnumerateFiles(root, filter));
+				if(directories == null || !directories.Any()){
+					return files;
+				}
+				else {
+					foreach (string d in directories)
+					{
+						files.Concat(getFiles3(d));
+					}
+					return files;
+				}
+			}
+			catch (System.IO.DirectoryNotFoundException)
+			{
+				MessageBox.Show("Please enter a valid Directory");
+				return null;
+			}
+		}
+
+
+
 
         /// <summary>
         /// Determines whether a file has allowed format.

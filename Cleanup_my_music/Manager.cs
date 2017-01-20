@@ -13,18 +13,25 @@ namespace Cleanup_my_music {
     ///</summary>
     class Manager {
 
-        List<string> files = FileSystem.getFiles("E://tixati");
+        List<string> files = null;
+        List<string> missingGenre = null;
+
 
         ///takes in an array list
-        public Manager(/*playlist string array*/) {
-            //array list = playlist
+        public Manager(List<string> playlist) {
+            files = playlist;
+
         }
 
         //this is an example search for number of missing [x] tags
-        public void findMissingX(/*[x]*/) {
+        public int findMissingGenre() {
             foreach (string f in files) {
-                //i honestly have no idea what im doing, but this should check if the f its looking has that tag
+                if (true) {//lmao
+                    missingGenre.Add(f);
+                }
             }
+
+            return missingGenre.Count;
         }
     }
 }

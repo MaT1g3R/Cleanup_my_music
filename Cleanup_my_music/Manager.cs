@@ -14,11 +14,11 @@ namespace Cleanup_my_music {
     ///</summary>
     class Manager {
 
-        private IEnumerable<File> EnumSongs = new File[] { };
+        private IEnumerable<File> songs = new File[] { };
 
         public Manager(IEnumerable<string> songList) {
             foreach (string song in songList) {
-                this.EnumSongs = this.EnumSongs.Concat(new File[] { File.Create(song) });//This will create a file object with each song path
+                this.songs = this.songs.Concat(new File[] { File.Create(song) });//This will create a file object with each song path
             }
         }
     }

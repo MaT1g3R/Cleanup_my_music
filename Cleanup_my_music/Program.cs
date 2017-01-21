@@ -23,21 +23,17 @@ namespace Cleanup_my_music {
             //Actually tho please use the debugger
 
             //Console.WriteLine("Avg: " + testCodeRunTime(100));
-            string myWholeLibrary = "E://tixati";
-            List<string> test = FileSystem.getFiles(myWholeLibrary);
+            //string myWholeLibrary = "E://tixati";
+            //List<string> test = FileSystem.getFiles(myWholeLibrary);
 
             //MessageBox.Show("Avg: " + testCodeRunTime(100));
 
-
             //string testingDir = "C://Users//MaT1g3R//Desktop//Testing Directory";
-            // string myWholeLibrary = "E://tixati";
+            //string myWholeLibrary = "E://tixati";
             //string myMusic = "A://Music";
             //string macAnimes = "/Users/PeijunsMac/Desktop/Animu";
             //List<string> notVaildPathFiles = FileSystem.getFiles("some nonsense");
             //List<string> files = FileSystem.getFiles(myMusic);
-
-
-
 
             //MessageBox.Show(testCodeRunTime(200).ToString());
             //method 1 avg on mac is 9.575 over 200 runs on macAnimes dir
@@ -48,8 +44,17 @@ namespace Cleanup_my_music {
             //method 1 avg is 135
             //method 2 avg is 136.46
             //method 3 avg is 254.74 on my library (uses 30MB of RAM compared to 19MB on others?)
-        }
 
+            //Windows machine testing
+
+            //MessageBox.Show(testCodeRunTime(100).ToString());
+            //method 1 avg is 170.99, 170.43
+            //method 2 avg is 178.99, 181.26
+            //method 3 avg is 160.25, 158.98
+            //Final method avg is 61.66, holy shit IEnumerable is op
+
+            Manager myManager = new Manager(FileSystem.getFiles("A://Music"));
+        }
         /// <summary>
         /// Tests the code run time.
         /// </summary>
@@ -59,11 +64,9 @@ namespace Cleanup_my_music {
         /// </returns>
         static double testCodeRunTime(int times) {
 
-            string myWholeLibrary = "E://tixati";
-
             Stopwatch stopwatch = Stopwatch.StartNew();
             for (int i = 0; i < times; i++) {
-                List<string> files = FileSystem.getFiles3(myWholeLibrary);
+                IEnumerable<string> files = FileSystem.getFiles("A://Music");
             }
             stopwatch.Stop();
             double total = stopwatch.ElapsedMilliseconds;

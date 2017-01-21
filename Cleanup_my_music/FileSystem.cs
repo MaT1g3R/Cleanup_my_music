@@ -6,19 +6,14 @@ using System.Linq;
 
 namespace Cleanup_my_music {
     /// <summary>
-    /// The FileSystem class will get all paths of media files under a root folder.
+    /// The FileSystem class will get all paths of files under a root folder.
     /// </summary>
     public static class FileSystem {
         /// <summary>
-        /// The arrary of allowed format
+        /// Get all file paths under the root folder
         /// </summary>
-        private static string[] allowedFormat = { "*.mp3", "*.flac", "*.m4a", "*.wav" };
-
-        /// <summary>
-        /// Gets file with allowd format under the root folder.
-        /// </summary>
-        /// <param name="root">(hopefully) A vaild folder path</param>
-        /// <returns>A IEnumerable of all paths of files with allowed format under the root folder</returns>
+        /// <param name="root">(hopefully) A valid folder path</param>
+        /// <returns>An IEnumerable of all paths of files </returns>
         public static IEnumerable<string> getFiles(string root) {
             try {
                 IEnumerable<string> directories = Directory.EnumerateDirectories(root);

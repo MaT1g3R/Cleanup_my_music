@@ -14,8 +14,16 @@ namespace Cleanup_my_music {
     ///</summary>
     class Manager {
 
+        /// <summary>
+        /// The list of File instance for all songs
+        /// </summary>
         private IEnumerable<File> songs = new File[] { };
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Manager"/> class with a given list of file paths.
+        /// </summary>
+        /// <param name="pathList">The path list.</param>
+        /// <returns> An instance of the Manager class </returns>
         public Manager(IEnumerable<string> pathList) {
             foreach (string path in pathList) {
                 try {
@@ -26,5 +34,6 @@ namespace Cleanup_my_music {
                 } catch { }
             }
         }
+
     }
 }

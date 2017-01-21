@@ -22,7 +22,7 @@ namespace Cleanup_my_music {
         public static IEnumerable<string> getFiles(string root) {
             try {
                 IEnumerable<string> directories = Directory.EnumerateDirectories(root);
-                IEnumerable<string> files = allowedFormat.SelectMany(filter => System.IO.Directory.EnumerateFiles(root, filter));
+                IEnumerable<string> files = Directory.EnumerateFiles(root);
                 if (directories == null || !directories.Any()) {
                     return files;
                 } else {

@@ -16,9 +16,14 @@ namespace Cleanup_my_music {
 
         private IEnumerable<File> songs = new File[] { };
 
-        public Manager(IEnumerable<string> songList) {
-            foreach (string song in songList) {
-                this.songs = this.songs.Concat(new File[] { File.Create(song) });//This will create a file object with each song path
+        public Manager(IEnumerable<string> pathList) {
+            foreach (string path in pathList) {
+                try {
+                    File pending = File.Create(path);
+                    if (pending.Properties.MediaTypes == MediaTypes.Audio) {
+                        this.songs = this.songs.Concat(new File[] { pending });//This will create a file object with each song path
+                    }
+                } catch { }
             }
         }
     }

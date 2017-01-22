@@ -24,6 +24,7 @@ namespace Cleanup_my_music {
         /// </summary>
         /// <param name="pathList">The path list.</param>
         /// <returns> An instance of the Manager class </returns>
+
         public Manager(IEnumerable<string> pathList) {
             foreach (string path in pathList) {
                 try {
@@ -31,7 +32,8 @@ namespace Cleanup_my_music {
                     if (pending.Properties.MediaTypes == MediaTypes.Audio) {
                         this.songs = this.songs.Concat(new File[] { pending });//This will create a file object with each song path
                     }
-                } catch { }
+                }
+                catch { }
             }
         }
 

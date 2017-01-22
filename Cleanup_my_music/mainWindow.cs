@@ -9,13 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cleanup_my_music {
+
     public partial class mainWindow : Form {
+        private string filePath;
+        OpenFileDialog dialog = new OpenFileDialog();
+
         public mainWindow() {
             InitializeComponent();
         }
 
         private void mainWindow_Load(object sender, EventArgs e) {
 
+        }
+
+        private void loadFolderToolStripMenuItem_Click(object sender, EventArgs e) {
+            filePath = dialog.ShowDialog();
         }
     }
 }

@@ -31,9 +31,20 @@ namespace Cleanup_my_music {
             var allTags = Tag.GetValue(mySong);
             Tag allTagsCast = (Tag)allTags;
             var tagType = allTagsCast.GetType();
-            var title = tagType.GetProperty("Title");
-            var mySongTitle = title.GetGetMethod().Invoke(allTagsCast, null);
-
+            var tags = tagType.GetProperties();
+            List<string> tagNames = new List<string> { };
+            foreach (PropertyInfo info in tags) {
+                if (info.GetSetMethod() != null && info.GetGetMethod() != null) {
+                    tagNames.Add(info.Name);
+                }
+            }
+            Dictionary<string, object> myDick = new Dictionary<string, object> { };
+            foreach (string tagname in tagNames) {
+                var tag = tagType.GetProperty(tagname);
+                var mySongTag = tag.GetGetMethod().Invoke(allTagsCast, null);
+                myDick.Add(tagname, mySongTag);
+            }
+            Dictionary<string, object> myDick2 = myDick;
         }
 
         /// <summary>

@@ -18,6 +18,7 @@ namespace Cleanup_my_music {
         /// The list of File instance for all songs
         /// </summary>
         private IEnumerable<File> songs = new File[] { };
+        private string[] tagsWeMightCareAbout = new string[] { };
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Manager"/> class with a given list of file paths.
@@ -32,8 +33,7 @@ namespace Cleanup_my_music {
                     if (pending.Properties.MediaTypes == MediaTypes.Audio) {
                         this.songs = this.songs.Concat(new File[] { pending });//This will create a file object with each song path
                     }
-                }
-                catch { }
+                } catch { }
             }
         }
 

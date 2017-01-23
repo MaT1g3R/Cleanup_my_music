@@ -38,13 +38,13 @@ namespace Cleanup_my_music {
                     tagNames.Add(info.Name);
                 }
             }
-            Dictionary<string, object> myDick = new Dictionary<string, object> { };
+            Dictionary<string, object> myDict = new Dictionary<string, object> { };
             foreach (string tagname in tagNames) {
                 var tag = tagType.GetProperty(tagname);
                 var mySongTag = tag.GetGetMethod().Invoke(allTagsCast, null);
-                myDick.Add(tagname, mySongTag);
+                myDict.Add(tagname, mySongTag);
             }
-            Dictionary<string, object> myDick2 = myDick;
+            Dictionary<string, object> myDict2 = myDict;
         }
 
         /// <summary>

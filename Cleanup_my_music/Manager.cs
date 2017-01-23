@@ -14,26 +14,35 @@ namespace Cleanup_my_music {
     ///</summary>
     class Manager {
 
-        /// <summary>
-        /// The list of File instance for all songs
-        /// </summary>
-        private IEnumerable<File> songs = new File[] { };
-        private string[] tagsWeMightCareAbout = new string[] { };
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Manager"/> class with a given list of file paths.
-        /// </summary>
-        /// <param name="pathList">The path list.</param>
-        /// <returns> An instance of the Manager class </returns>
-
+		private Dictionary<string, object> songDict = new Dictionary<string, object> { };
+		
         public Manager(IEnumerable<string> pathList) {
             foreach (string path in pathList) {
-                try {
-                    File pending = File.Create(path);
-                    if (pending.Properties.MediaTypes == MediaTypes.Audio) {
-                        this.songs = this.songs.Concat(new File[] { pending });//This will create a file object with each song path
-                    }
-                } catch { }
+				try
+				{
+					File pending = File.Create(path);
+					if (pending.Properties.MediaTypes == MediaTypes.Audio)
+					{
+						//Add it to the dict somehow
+						//The dict struceture should be like:
+						// {"Genre": {"Rock": [ ] , "Pop" : [ ]} , "Artist" : {"dude1" : [ ], "dude2": [ ] } ..........}
+						// So how the fuck do i add these
+
+						//Get the property types first
+						Type FileType = pending.GetType();
+
+
+						//Then read the actual property
+
+
+						//Then add the file object to the approiate sub dicts? And it needs to be added multiple times
+
+
+
+
+					}
+				}
+				catch (TagLib.UnsupportedFormatException) { }
             }
         }
 

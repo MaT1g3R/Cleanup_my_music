@@ -14,7 +14,7 @@ namespace Cleanup_my_music {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new mainWindow()); We dont need the window to show up, yet
+            Application.Run(new mainWindow()); //We dont need the window to show up, yet
 
             //Debug goes below this line------------------------------------------------------
 
@@ -53,7 +53,7 @@ namespace Cleanup_my_music {
             //method 3 avg is 160.25, 158.98
             //Final method avg is 61.66, holy shit IEnumerable is op
 
-            Manager myManager = new Manager(FileSystem.getFiles("A://Music"));
+            // Manager myManager = new Manager(FileSystem.getFiles("A://Music"));
         }
         /// <summary>
         /// Tests the code run time.

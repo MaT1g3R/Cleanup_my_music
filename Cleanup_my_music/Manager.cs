@@ -14,35 +14,32 @@ namespace Cleanup_my_music {
     ///</summary>
     class Manager {
 
-		private Dictionary<string, object> songDict = new Dictionary<string, object> { };
-		
+        private Dictionary<string, object> songDict = new Dictionary<string, object> { };
+
         public Manager(IEnumerable<string> pathList) {
             foreach (string path in pathList) {
-				try
-				{
-					File pending = File.Create(path);
-					if (pending.Properties.MediaTypes == MediaTypes.Audio)
-					{
-						//Add it to the dict somehow
-						//The dict struceture should be like:
-						// {"Genre": {"Rock": [ ] , "Pop" : [ ]} , "Artist" : {"dude1" : [ ], "dude2": [ ] } ..........}
-						// So how the fuck do i add these
+                try {
+                    File pending = File.Create(path);
+                    if (pending.Properties.MediaTypes == MediaTypes.Audio) {
+                        //Add it to the dict somehow
+                        //The dict struceture should be like:
+                        // {"Genre": {"Rock": [ ] , "Pop" : [ ]} , "Artist" : {"dude1" : [ ], "dude2": [ ] } ..........}
+                        // So how the fuck do i add these
 
-						//Get the property types first
-						Type FileType = pending.GetType();
+                        //Get the property types first
+                        Type FileType = pending.GetType();
 
 
-						//Then read the actual property
+                        //Then read the actual property
 
 
-						//Then add the file object to the approiate sub dicts? And it needs to be added multiple times
+                        //Then add the file object to the approiate sub dicts? And it needs to be added multiple times
 
 
 
 
-					}
-				}
-				catch (TagLib.UnsupportedFormatException) { }
+                    }
+                } catch (TagLib.UnsupportedFormatException) { }
             }
         }
 

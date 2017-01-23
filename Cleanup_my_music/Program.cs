@@ -44,7 +44,12 @@ namespace Cleanup_my_music {
                 var mySongTag = tag.GetGetMethod().Invoke(allTagsCast, null);
                 myDict.Add(tagname, mySongTag);
             }
-            Dictionary<string, object> myDict2 = myDict;
+
+            SongDict mySongs = new SongDict();
+            mySongs.addSong(mySong);
+
+            int i = 0;
+
         }
 
         /// <summary>

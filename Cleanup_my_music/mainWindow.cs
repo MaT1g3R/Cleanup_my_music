@@ -12,6 +12,10 @@ using TagLib;
 
 namespace Cleanup_my_music {
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class mainWindow : Form {
         private string filePath;
         FolderBrowserDialog dialog = new FolderBrowserDialog();
@@ -47,15 +51,14 @@ namespace Cleanup_my_music {
 
 
                     file = File.Create(song);
-                    Tag tag = file.GetTag(TagTypes.FlacMetadata);
+                    Tag tag = file.GetTag(TagTypes.Id3v2);
 
                     x++;
                     ListViewItem item = new ListViewItem(new[] { tag.Title, tag.Album, tag.AlbumArtists[0], tag.Genres[0], x.ToString() });
                     listView1.Items.Add(item);
 
 
-                }
-                catch (Exception) { }
+                } catch (Exception) { }
 
             }
 

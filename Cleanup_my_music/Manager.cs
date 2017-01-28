@@ -37,7 +37,6 @@ namespace Cleanup_my_music {
 
 
 
-
                     }
                 } catch (TagLib.UnsupportedFormatException) { }
             }

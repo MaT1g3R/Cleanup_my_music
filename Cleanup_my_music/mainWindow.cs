@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TagLib;
 
 
 namespace Cleanup_my_music {
@@ -20,7 +21,7 @@ namespace Cleanup_my_music {
         }
 
         private void mainWindow_Load(object sender, EventArgs e) {
-       
+
 
         }
 
@@ -32,16 +33,36 @@ namespace Cleanup_my_music {
             //passes path into getFiles method and saves as a list
             IEnumerable<string> songs = FileSystem.getFiles(filePath);
 
-           
+
 
             //adds all files in directory to list box
+            File file;
+            ListViewItem albumList = new ListViewItem("Album");
+            ListViewItem artistList = new ListViewItem("Artist");
+            ListViewItem titleList = new ListViewItem("Title");
+            int x = 0;
+
             foreach (string song in songs) {
-                listBox1.Items.Add(song);
+                try {
+
+
+                    file = File.Create(song);
+                    Tag tag = file.GetTag(TagTypes.FlacMetadata);
+
+                    x++;
+                    ListViewItem item = new ListViewItem(new[] { tag.Title, tag.Album, tag.AlbumArtists[0], tag.Genres[0], x.ToString() });
+                    listView1.Items.Add(item);
+
+
+                }
+                catch (Exception) { }
+
             }
+
         }
 
         private void genreToolStripMenuItem_Click(object sender, EventArgs e) {
-            List<string> selected = listBox1.SelectedItems.Cast<string>().ToList();
+            //List<string> selected = listBox1.SelectedItems.Cast<string>().ToList();
             string newTag = null;
             //pass manager selected and newTag
             MessageBox.Show("The selected files have had their genre changed to " + newTag);

@@ -33,7 +33,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.songProperties = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tagsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,13 +41,20 @@
             this.titleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.backButton = new System.Windows.Forms.ToolStripButton();
+            this.pauseButton = new System.Windows.Forms.ToolStripButton();
             this.playButton = new System.Windows.Forms.ToolStripButton();
             this.nextButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.volumeBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.pauseButton = new System.Windows.Forms.ToolStripButton();
             this.playbackSelector = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Album = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Artist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Genre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.placeholder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.songProperties.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -79,17 +85,6 @@
             this.loadFolderToolStripMenuItem.Text = "Load Folder";
             this.loadFolderToolStripMenuItem.Click += new System.EventHandler(this.loadFolderToolStripMenuItem_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.ColumnWidth = 300;
-            this.listBox1.ContextMenuStrip = this.songProperties;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 27);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(1217, 576);
-            this.listBox1.TabIndex = 1;
-            // 
             // songProperties
             // 
             this.songProperties.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -111,27 +106,27 @@
             // genreToolStripMenuItem
             // 
             this.genreToolStripMenuItem.Name = "genreToolStripMenuItem";
-            this.genreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.genreToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.genreToolStripMenuItem.Text = "Genre";
             this.genreToolStripMenuItem.Click += new System.EventHandler(this.genreToolStripMenuItem_Click);
             // 
             // artistToolStripMenuItem
             // 
             this.artistToolStripMenuItem.Name = "artistToolStripMenuItem";
-            this.artistToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.artistToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.artistToolStripMenuItem.Text = "Artist";
             this.artistToolStripMenuItem.Click += new System.EventHandler(this.artistToolStripMenuItem_Click);
             // 
             // albumToolStripMenuItem
             // 
             this.albumToolStripMenuItem.Name = "albumToolStripMenuItem";
-            this.albumToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.albumToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.albumToolStripMenuItem.Text = "Album";
             // 
             // titleToolStripMenuItem
             // 
             this.titleToolStripMenuItem.Name = "titleToolStripMenuItem";
-            this.titleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.titleToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.titleToolStripMenuItem.Text = "Title";
             // 
             // toolStrip1
@@ -159,6 +154,15 @@
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(23, 22);
             this.backButton.Text = "toolStripButton1";
+            // 
+            // pauseButton
+            // 
+            this.pauseButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pauseButton.Image = ((System.Drawing.Image)(resources.GetObject("pauseButton.Image")));
+            this.pauseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pauseButton.Name = "pauseButton";
+            this.pauseButton.Size = new System.Drawing.Size(23, 22);
+            this.pauseButton.Text = "toolStripButton4";
             // 
             // playButton
             // 
@@ -189,15 +193,6 @@
             this.volumeBar.Size = new System.Drawing.Size(150, 22);
             this.volumeBar.Value = 100;
             // 
-            // pauseButton
-            // 
-            this.pauseButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pauseButton.Image = ((System.Drawing.Image)(resources.GetObject("pauseButton.Image")));
-            this.pauseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pauseButton.Name = "pauseButton";
-            this.pauseButton.Size = new System.Drawing.Size(23, 22);
-            this.pauseButton.Text = "toolStripButton4";
-            // 
             // playbackSelector
             // 
             this.playbackSelector.Items.AddRange(new object[] {
@@ -217,13 +212,56 @@
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Title,
+            this.Album,
+            this.Artist,
+            this.Genre,
+            this.placeholder});
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(12, 52);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1217, 599);
+            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listView1.TabIndex = 4;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.VirtualListSize = 5;
+            // 
+            // Title
+            // 
+            this.Title.Text = "Title";
+            this.Title.Width = 291;
+            // 
+            // Album
+            // 
+            this.Album.Text = "Album";
+            this.Album.Width = 267;
+            // 
+            // Artist
+            // 
+            this.Artist.Text = "Artist";
+            this.Artist.Width = 189;
+            // 
+            // Genre
+            // 
+            this.Genre.Text = "Genre";
+            // 
+            // placeholder
+            // 
+            this.placeholder.Text = "placeholder number for debugging";
+            this.placeholder.Width = 281;
+            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 622);
+            this.ClientSize = new System.Drawing.Size(1229, 632);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainWindow";
@@ -244,7 +282,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadFolderToolStripMenuItem;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ContextMenuStrip songProperties;
         private System.Windows.Forms.ToolStripMenuItem tagsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem genreToolStripMenuItem;
@@ -260,6 +297,13 @@
         private System.Windows.Forms.ToolStripProgressBar volumeBar;
         private System.Windows.Forms.ToolStripComboBox playbackSelector;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Title;
+        private System.Windows.Forms.ColumnHeader Album;
+        private System.Windows.Forms.ColumnHeader Artist;
+        private System.Windows.Forms.ColumnHeader Genre;
+        private System.Windows.Forms.ColumnHeader placeholder;
     }
 }
 

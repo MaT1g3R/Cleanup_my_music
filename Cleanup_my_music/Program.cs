@@ -17,12 +17,17 @@ namespace Cleanup_my_music {
             //Debug goes below this line------------------------------------------------------
 
             //Manager myManager = new Manager(FileSystem.getFiles("A://Music"));
-            IEnumerable<string> files = FileSystem.getFiles("A://Music");
+            //IEnumerable<string> files = FileSystem.getFiles("A://Music");
             //IEnumerable<string> files2 = FileSystem.getFiles("C://Users//MaT1g3R//Desktop//Testing Directory");
             //IEnumerable<string> files3 = FileSystem.getFiles("E://tixati");
-            Manager myManager = new Manager(files);
+            IEnumerable<string> files4 = FileSystem.getFiles("C://Users//MaT1g3R//Desktop//New folder");
+            Manager myManager = new Manager(files4);
+            string tmpSong = "";
+            foreach (string s in myManager.MasterPathList) {
+                tmpSong = s;
+            }
+            myManager.editTag(tmpSong, "Title", new[] { "KappaPride" });
             int i = 1;
-
         }
 
         /// <summary>

@@ -117,5 +117,73 @@ namespace Cleanup_my_music {
             return tmpVal;
         }
 
+        /// <summary>
+        /// Re-read the data from disk and updates the masterSongList dictionary 
+        /// </summary>
+        /// <param name="path">The path.</param>
+        private void uptadeSong(string path) {
+            if (masterPathList.Contains(path)) {//check if the path is actually in the manager
+                File pending = File.Create(path);
+                //Get the tag and properties from the audio file
+                Tag songTag = pending.Tag;
+                TagLib.Properties songProperties = pending.Properties;
+
+                //Create two lists to hold the *CLASS PROPERTIES* of the tag and properties class
+                IEnumerable<PropertyInfo> tagClassProperties = songTag.GetType().GetProperties();
+                IEnumerable<PropertyInfo> songPropertiesClassProperties = songProperties.GetType().GetProperties();
+
+                //Get two lists of getter methods of the Tag and properties class
+                IEnumerable<MethodInfo> tagGetters = new MethodInfo[] { };
+                IEnumerable<MethodInfo> PropertyGetters = new MethodInfo[] { };
+
+                foreach (PropertyInfo p in tagClassProperties) {
+                    if (p.GetGetMethod() != null && p.GetSetMethod() != null) {
+                        tagGetters = tagGetters.Concat(new MethodInfo[] { p.GetGetMethod() });
+                    }
+                }
+
+                foreach (PropertyInfo p in songPropertiesClassProperties) {
+                    if (p.GetGetMethod() != null) {
+                        PropertyGetters = PropertyGetters.Concat(new MethodInfo[] { p.GetGetMethod() });
+                    }
+                }
+
+                //Now call all the getters and update the info in the dict
+                foreach (MethodInfo m in tagGetters) {
+                    try {
+                        var invokedValue = m.Invoke(songTag, null);
+                        string methodName = m.Name.Substring(4);
+                        this.masterSongList[path][methodName] = invokedValue;
+                    } catch (ArgumentNullException) { }
+                }
+
+                foreach (MethodInfo m in PropertyGetters) {
+                    try {
+                        var invokedValue = m.Invoke(songProperties, null);
+                        string methodName = m.Name.Substring(4);
+                        this.masterSongList[path][methodName] = invokedValue;
+                    } catch (ArgumentNullException) { }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Edits/Adds the tag value.
+        /// </summary>
+        /// <param name="path">The path of song.</param>
+        /// <param name="tagType">Type of the tag.</param>
+        /// <param name="tagVal">The tag value in a list, if there's only one value it still has to be in a list.</param>
+        public void editTag(string path, string tagType, object[] tagVal) {
+            if (masterPathList.Contains(path)) {
+                File pending = File.Create(path);
+                Tag songTag = pending.Tag;
+                PropertyInfo tagProperty = songTag.GetType().GetProperty(tagType);
+                MethodInfo toBeInvoked = tagProperty.GetSetMethod();
+                toBeInvoked.Invoke(songTag, tagVal);
+                pending.Save();
+                uptadeSong(path);
+            }
+
+        }
     }
 }

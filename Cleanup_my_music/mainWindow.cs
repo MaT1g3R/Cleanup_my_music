@@ -60,16 +60,11 @@ namespace Cleanup_my_music {
 
                 string artistsStr = string.Join(",", artists);
                 string genresStr = string.Join(",", genres);
-                string title;
-                if (myManager.getSongAttributes(path, "Title") == null) {
-                    title = "null";
-                } else { title = myManager.getSongAttributes(path, "Title").ToString(); }
+                string title = "null";
+                string album = "null";
 
-                string album;
-                if (myManager.getSongAttributes(path, "Album") == null) {
-                    album = "null";
-                } else { album = myManager.getSongAttributes(path, "Album").ToString(); }
-
+                title = myManager.getSongAttributes(path, "Title")?.ToString();
+                album = myManager.getSongAttributes(path, "Album")?.ToString();
 
                 //creates a new list item containing each of the columns we have
                 ListViewItem item = new ListViewItem(new[] {

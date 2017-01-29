@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TagLib;
 using System.Reflection;
 
@@ -17,6 +15,10 @@ namespace Cleanup_my_music {
 
         private Dictionary<String, Dictionary<string, IEnumerable<string>>> songDict = new Dictionary<String, Dictionary<string, IEnumerable<string>>> { };
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Manager"/> class.
+        /// </summary>
+        /// <param name="pathList">The path list.</param>
         public Manager(IEnumerable<string> pathList) {
             foreach (string path in pathList) {
                 try {
@@ -49,6 +51,7 @@ namespace Cleanup_my_music {
                                 }
 
                                 string tagValue = (string)tagValueC;
+                                tagValue = tagValue.ToLower();
 
                                 if (!this.songDict.ContainsKey(tagName)) {
                                     Dictionary<string, IEnumerable<string>> subDict = new Dictionary<string, IEnumerable<string>> { };
@@ -68,6 +71,28 @@ namespace Cleanup_my_music {
                 } catch (TagLib.UnsupportedFormatException) { }
             }
         }
+
+        /// <summary>
+        /// Gets the songs by tag.
+        /// </summary>
+        /// <param name="tag">The tag type.(for example "Genre")</param>
+        /// <param name="value">The tag value.(for example "Rock")</param>
+        /// <returns></returns>
+        public IEnumerable<string> getSongsByTag(string tag, string value) {
+            tag = tag.ToLower(); value = value.ToLower();
+            return this.songDict[tag][value];
+        }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

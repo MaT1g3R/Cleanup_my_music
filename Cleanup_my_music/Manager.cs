@@ -24,23 +24,14 @@ namespace Cleanup_my_music {
                     if (pending.Properties.MediaTypes == MediaTypes.Audio) {
 
                         Tag songTags = pending.Tag;
-                        TagLib.Properties songProperties = pending.Properties;
 
                         PropertyInfo[] songTagsProperties = songTags.GetType().GetProperties();
-                        PropertyInfo[] songPropertiesProperties = songProperties.GetType().GetProperties();
 
                         List<MethodInfo> tagGetters = new List<MethodInfo> { };
-                        List<MethodInfo> PropertyGetters = new List<MethodInfo> { };
 
                         foreach (PropertyInfo info in songTagsProperties) {
                             if (info.GetSetMethod() != null && info.GetGetMethod() != null) {
                                 tagGetters.Add(info.GetGetMethod());
-                            }
-                        }
-
-                        foreach (PropertyInfo info in songPropertiesProperties) {
-                            if (info.GetGetMethod() != null) {
-                                PropertyGetters.Add(info.GetGetMethod());
                             }
                         }
 

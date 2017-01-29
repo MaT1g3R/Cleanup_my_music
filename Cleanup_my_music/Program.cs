@@ -12,14 +12,16 @@ namespace Cleanup_my_music {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainWindow()); //We dont need the window to show up, yet
+            //Application.Run(new mainWindow()); //We dont need the window to show up, yet
 
             //Debug goes below this line------------------------------------------------------
 
-            // Manager myManager = new Manager(FileSystem.getFiles("A://Music"));
-            //IEnumerable<string> files = FileSystem.getFiles("A://Music");
+            //Manager myManager = new Manager(FileSystem.getFiles("A://Music"));
+            IEnumerable<string> files = FileSystem.getFiles("A://Music");
             //IEnumerable<string> files2 = FileSystem.getFiles("C://Users//MaT1g3R//Desktop//Testing Directory");
             //IEnumerable<string> files3 = FileSystem.getFiles("E://tixati");
+            Manager myManager = new Manager(files);
+            int i = 1;
 
         }
 

@@ -42,15 +42,22 @@ namespace Cleanup_my_music {
                                 IEnumerable<string> pathIEnumerable = new string[] { path };
                                 string tagName = getter.Name.Substring(4);
                                 var tagValueC = getter.Invoke(songTags, null);
-                                if (tagValueC.GetType() == typeof(string[])) {
+                                if (tagValueC?.GetType() == typeof(string[])) {
                                     string tmpVal = "";
                                     foreach (string s in (string[])tagValueC) {
                                         tmpVal += s + ",";
                                     }
-                                    tagValueC = tmpVal.Substring(0, tmpVal.Length - 1);
+                                    if (tmpVal.Length < 1) {
+                                        tagValueC = tmpVal;
+                                    } else {
+                                        tagValueC = tmpVal.Substring(0, tmpVal.Length - 1);
+                                    }
                                 }
 
-                                string tagValue = (string)tagValueC;
+                                if (tagValueC == null) {
+                                    tagValueC = "null";
+                                }
+                                string tagValue = tagValueC.ToString();
                                 tagValue = tagValue.ToLower();
 
                                 if (!this.songDict.ContainsKey(tagName)) {
@@ -65,7 +72,7 @@ namespace Cleanup_my_music {
                                     }
                                 }
 
-                            } catch { ArgumentNullException ex; }
+                            } catch (ArgumentNullException) { }
                         }
                     }
                 } catch (TagLib.UnsupportedFormatException) { }

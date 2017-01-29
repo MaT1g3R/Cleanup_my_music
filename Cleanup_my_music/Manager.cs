@@ -12,7 +12,13 @@ namespace Cleanup_my_music {
     ///</summary>
     class Manager {
 
+        /// <summary>
+        /// The master song list
+        /// </summary>
         private Dictionary<string, Dictionary<string, object>> masterSongList = new Dictionary<string, Dictionary<string, object>> { };
+        /// <summary>
+        /// The master path list
+        /// </summary>
         private IEnumerable<string> masterPathList = new string[] { };
 
         /// <summary>

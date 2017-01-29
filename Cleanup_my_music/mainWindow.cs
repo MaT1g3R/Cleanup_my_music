@@ -47,8 +47,7 @@ namespace Cleanup_my_music {
             //looks which tab the user has selected and assigns that list to our current variable
             if (tabControl1.SelectedTab == tabPage1) {
                 cur = listView1;
-            }
-            else {
+            } else {
                 cur = listView2;
             }
 
@@ -62,8 +61,7 @@ namespace Cleanup_my_music {
                         //flac has different metadata than other things
                         file = File.Create(song);
                         tag = file.GetTag(TagTypes.FlacMetadata);
-                    }
-                    else if (song.Contains("mp3")) {
+                    } else if (song.Contains("mp3")) {
                         //i guess this is what mp3 uses
                         file = File.Create(song);
                         tag = file.GetTag(TagTypes.Id3v2, true);
@@ -76,13 +74,11 @@ namespace Cleanup_my_music {
                         //this makes it not crash if thats true
                         if (tag.Artists.Length > 0) {
                             artist = tag.Artists[0];
-                        }
-                        else {
+                        } else {
                             artist = "";
                         }
                         //this could probably also just overwrite albumartist with artist but meh
-                    }
-                    else {
+                    } else {
                         artist = tag.AlbumArtists[0];
                     }
 
@@ -99,8 +95,7 @@ namespace Cleanup_my_music {
                     cur.Items.Add(item);
 
 
-                }
-                catch (Exception) { }//lol
+                } catch (Exception) { }//lol
 
             }
 

@@ -16,13 +16,18 @@ namespace Cleanup_my_music {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainWindow()); //We dont need the window to show up, yet
+            //Application.Run(new mainWindow()); //We dont need the window to show up, yet
 
             //Debug goes below this line------------------------------------------------------
 
             // Manager myManager = new Manager(FileSystem.getFiles("A://Music"));
             //IEnumerable<string> files = FileSystem.getFiles("A://Music");
-            //IEnumerable<string> files2 = FileSystem.getFiles("C://Users//MaT1g3R//Desktop//New folder");
+            IEnumerable<string> files2 = FileSystem.getFiles("C://Users//MaT1g3R//Desktop//Testing Directory");
+            Manager myManager = new Manager(files2);
+            int i = 0;
+
+
+
             //IEnumerable<string> files2 = FileSystem.getFiles("E://tixati");
             /*
             //@KingGuppie if you are looking at this, just be scared, it's fine. I spent like 3 hours to figure this shit out
@@ -45,7 +50,7 @@ namespace Cleanup_my_music {
                 var mySongTag = tag.GetGetMethod().Invoke(allTagsCast, null);
                 myDict.Add(tagname, mySongTag);
             }
-            
+
             SongDict mySongs = new SongDict();
             mySongs.addSong(mySong);
             //Test commit

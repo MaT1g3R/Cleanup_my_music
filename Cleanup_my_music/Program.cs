@@ -22,9 +22,9 @@ namespace Cleanup_my_music {
 
             // Manager myManager = new Manager(FileSystem.getFiles("A://Music"));
             //IEnumerable<string> files = FileSystem.getFiles("A://Music");
-            IEnumerable<string> files2 = FileSystem.getFiles("C://Users//MaT1g3R//Desktop//Testing Directory");
-            Manager myManager = new Manager(files2);
-            int i = 0;
+            //IEnumerable<string> files2 = FileSystem.getFiles("C://Users//MaT1g3R//Desktop//Testing Directory");
+            //Manager myManager = new Manager(files2);
+            //int i = 0;
 
 
 

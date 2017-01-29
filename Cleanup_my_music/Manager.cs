@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TagLib;
 using System.Reflection;
+using TagLib;
 
 namespace Cleanup_my_music {
 
@@ -16,6 +16,22 @@ namespace Cleanup_my_music {
         private IEnumerable<string> masterPathList = new string[] { };
 
         /// <summary>
+        /// Gets or sets the master path list.
+        /// </summary>
+        /// <value>
+        /// The master path list.
+        /// </value>
+        public IEnumerable<string> MasterPathList {
+            get {
+                return masterPathList;
+            }
+
+            set {
+                masterPathList = value;
+            }
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Manager"/> class.
         /// </summary>
         /// <param name="inputPathList">The input path list.</param>
@@ -24,10 +40,9 @@ namespace Cleanup_my_music {
                 try {
                     File pending = File.Create(path);
                     if (pending.Properties.MediaTypes == MediaTypes.Audio) {//We know it's an audio file
-                        this.masterPathList = this.masterPathList.Concat(new string[] { path });//Add the path to the master path list
+                        this.MasterPathList = this.MasterPathList.Concat(new string[] { path });//Add the path to the master path list
                         this.masterSongList.Add(path, new Dictionary<string, object> { });
                         //Then add the song's properties and tags as a dictionary to the master song list, with it's path as key?
-
                         //Get the tag and properties from the audio file
                         Tag songTag = pending.Tag;
                         TagLib.Properties songProperties = pending.Properties;

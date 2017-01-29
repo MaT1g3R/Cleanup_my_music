@@ -12,7 +12,7 @@ namespace Cleanup_my_music {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new mainWindow()); //We dont need the window to show up, yet
+            Application.Run(new mainWindow()); //We dont need the window to show up, yet
 
             //Debug goes below this line------------------------------------------------------
 

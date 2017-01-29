@@ -8,6 +8,7 @@ namespace Cleanup_my_music {
 
     public partial class mainWindow : Form {
         private string filePath;
+        private Manager myManager;
         FolderBrowserDialog dialog = new FolderBrowserDialog();
 
         public mainWindow() {
@@ -27,7 +28,8 @@ namespace Cleanup_my_music {
             //passes path into getFiles method and saves as a list
             IEnumerable<string> songs = FileSystem.getFiles(filePath);
 
-
+            //initialize the manager 
+            myManager = new Manager(songs);
 
             //initialize variables for file
             File file;
@@ -46,50 +48,45 @@ namespace Cleanup_my_music {
             }
 
             //loop through every song file that was grabbed from the directory
-            foreach (string song in songs) {
-                try {//try statement because lmao
-
-                    //initialize a tag variable
-                    Tag tag = null;
-                    if (song.Contains("flac")) {
-                        //flac has different metadata than other things
-                        file = File.Create(song);
-                        tag = file.GetTag(TagTypes.FlacMetadata);
-                    } else if (song.Contains("mp3")) {
-                        //i guess this is what mp3 uses
-                        file = File.Create(song);
-                        tag = file.GetTag(TagTypes.Id3v2, true);
-                    }//should put stuff here for other file extensions that might exist
-
-                    //error checking stuff for artists
-                    String artist = null;
-                    if (tag.AlbumArtists.Length <= 0) {
-                        //artist is deprecated but some of my music still has it instead of album artist
-                        //this makes it not crash if thats true
-                        if (tag.Artists.Length > 0) {
-                            artist = tag.Artists[0];
-                        } else {
-                            artist = "";
-                        }
-                        //this could probably also just overwrite albumartist with artist but meh
-                    } else {
-                        artist = tag.AlbumArtists[0];
-                    }
-
-                    //increment debug integer
-                    x++;
-
-                    //creates a new list item containing each of the columns we have
-                    ListViewItem item = new ListViewItem(new[] { tag.Title, tag.Album, artist, tag.Genres[0], x.ToString() });
-
-                    //tags it with the path so it is not lost 
-                    item.Tag = song;
-
-                    //adds it to the current selected list box
-                    cur.Items.Add(item);
+            foreach (string path in myManager.MasterPathList) {
 
 
-                } catch (Exception) { }//lol
+                //increment debug integer
+                x++;
+
+                //read data from manager @KingGuppie
+                string[] artists = (string[])myManager.getSongAttributes(path, "Performers");
+                string[] genres = (string[])myManager.getSongAttributes(path, "Genres");
+
+                string artistsStr = string.Join(",", artists);
+                string genresStr = string.Join(",", genres);
+                string title;
+                if (myManager.getSongAttributes(path, "Title") == null) {
+                    title = "null";
+                } else { title = myManager.getSongAttributes(path, "Title").ToString(); }
+
+                string album;
+                if (myManager.getSongAttributes(path, "Album") == null) {
+                    album = "null";
+                } else { album = myManager.getSongAttributes(path, "Album").ToString(); }
+
+
+                //creates a new list item containing each of the columns we have
+                ListViewItem item = new ListViewItem(new[] {
+                        title,
+                        album,
+                        artistsStr,
+                        genresStr,
+                        x.ToString()
+                    });
+
+                //tags it with the path so it is not lost 
+                item.Tag = path;
+
+                //adds it to the current selected list box
+                cur.Items.Add(item);
+
+
 
             }
 

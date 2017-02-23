@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bb558ddc-d61a-4409-b2c0-ab322e978a38" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cleanup_my_music/Cleanup_my_music.csproj" afterPath="$PROJECT_DIR$/Cleanup_my_music/Cleanup_my_music.csproj" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Cleanup_my_music/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+              <folding>
+                <marker date="1487812827127" expanded="true" signature="6:101" ph="..." />
+                <marker date="1487812827127" expanded="true" signature="130:1999" ph="{...}" />
+                <marker date="1487812827127" expanded="true" signature="157:1997" ph="{...}" />
+                <marker date="1487812827127" expanded="true" signature="167:257" ph="/// The main entry point for the application. ... " />
+                <marker date="1487812827127" expanded="true" signature="305:1354" ph="{...}" />
+                <marker date="1487812827127" expanded="true" signature="521:953" ph="/* Debug goes below this line------------------------------------------------------ ... */" />
+                <marker date="1487812827127" expanded="true" signature="1204:1248" ph="{...}" />
+                <marker date="1487812827127" expanded="true" signature="1364:1613" ph="/// Tests the code run time. ... " />
+                <marker date="1487812827127" expanded="true" signature="1663:1991" ph="{...}" />
+                <marker date="1487812827127" expanded="true" signature="1766:1859" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Manager.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Cleanup_my_music/Manager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <folding>
+                <marker date="1487812827126" expanded="true" signature="6:105" ph="..." />
+                <marker date="1487812827126" expanded="true" signature="134:8559" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="141:369" ph="///This class should deal with meta data management things.  ... " />
+                <marker date="1487812827126" expanded="true" signature="388:8557" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="399:468" ph="/// The master song list ... " />
+                <marker date="1487812827126" expanded="true" signature="613:682" ph="/// The master path list ... " />
+                <marker date="1487812827126" expanded="true" signature="763:921" ph="/// Gets or sets the master path list. ... " />
+                <marker date="1487812827126" expanded="true" signature="972:1127" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="990:1044" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="1062:1117" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="1137:1317" ph="/// Initializes a new instance of the &lt;see cref=&quot;Manager&quot;/&gt; class. ... " />
+                <marker date="1487812827126" expanded="true" signature="1376:4511" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="1429:4500" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="1451:4391" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="1582:4373" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="1862:2040" ph="/* Then add the song's properties and tags as a dictionary to the master song list, with it's path as key? ... */" />
+                <marker date="1487812827126" expanded="true" signature="2842:3090" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="2930:3064" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="3174:3404" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="3234:3378" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="3549:3912" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="3583:3852" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="3980:4350" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="4014:4290" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="4521:4804" ph="/// Gets the song attribute value. ... " />
+                <marker date="1487812827126" expanded="true" signature="4871:5216" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="5004:5048" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="5134:5178" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="5226:5393" ph="/// Re-read the data from disk and updates the masterSongList dictionary  ... " />
+                <marker date="1487812827126" expanded="true" signature="5439:7715" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="5488:7705" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="6380:6596" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="6460:6578" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="6672:6870" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="6724:6852" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="7000:7312" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="7026:7260" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="7372:7691" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="7398:7639" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="7725:8037" ph="/// Edits/Adds the tag value. ... " />
+                <marker date="1487812827126" expanded="true" signature="8112:8551" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="8161:8540" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileSystem.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Cleanup_my_music/FileSystem.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+              <folding>
+                <marker date="1487812827126" expanded="true" signature="6:97" ph="..." />
+                <marker date="1487812827126" expanded="true" signature="127:1268" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="133:243" ph="/// The FileSystem class will get all paths of files under a root folder. ... " />
+                <marker date="1487812827126" expanded="true" signature="279:1266" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="289:518" ph="/// Get all file paths under the root folder ... " />
+                <marker date="1487812827126" expanded="true" signature="583:1260" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="601:1093" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="830:883" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="945:1027" ph="{...}" />
+                <marker date="1487812827126" expanded="true" signature="1139:1250" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Cleanup_my_music/FileSystem.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2500" />
+    <option name="y" value="40" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state />
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cleanup_my_music (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cleanup_my_music (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cleanup_my_music" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="AspNetEditorPage" />
+  </component>
+  <component name="RunManager" selected=".NET Project.Default">
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+    </list>
+  </component>
+  <component name="RuntimeDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb558ddc-d61a-4409-b2c0-ab322e978a38" name="Default" comment="" />
+      <created>1487812999887</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1487812999887</updated>
+      <workItem from="1487813002297" duration="629000" />
+      <workItem from="1487813847470" duration="518000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1147000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="2500" y="40" width="1400" height="1000" extended-state="0" />
+    <layout>
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Cleanup_my_music/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="52" lean-forward="false" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
+          <folding>
+            <marker date="1487812827127" expanded="true" signature="6:101" ph="..." />
+            <marker date="1487812827127" expanded="true" signature="130:1999" ph="{...}" />
+            <marker date="1487812827127" expanded="true" signature="157:1997" ph="{...}" />
+            <marker date="1487812827127" expanded="true" signature="167:257" ph="/// The main entry point for the application. ... " />
+            <marker date="1487812827127" expanded="true" signature="305:1354" ph="{...}" />
+            <marker date="1487812827127" expanded="true" signature="521:953" ph="/* Debug goes below this line------------------------------------------------------ ... */" />
+            <marker date="1487812827127" expanded="true" signature="1204:1248" ph="{...}" />
+            <marker date="1487812827127" expanded="true" signature="1364:1613" ph="/// Tests the code run time. ... " />
+            <marker date="1487812827127" expanded="true" signature="1663:1991" ph="{...}" />
+            <marker date="1487812827127" expanded="true" signature="1766:1859" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cleanup_my_music/Manager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <marker date="1487812827126" expanded="true" signature="6:105" ph="..." />
+            <marker date="1487812827126" expanded="true" signature="134:8559" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="141:369" ph="///This class should deal with meta data management things.  ... " />
+            <marker date="1487812827126" expanded="true" signature="388:8557" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="399:468" ph="/// The master song list ... " />
+            <marker date="1487812827126" expanded="true" signature="613:682" ph="/// The master path list ... " />
+            <marker date="1487812827126" expanded="true" signature="763:921" ph="/// Gets or sets the master path list. ... " />
+            <marker date="1487812827126" expanded="true" signature="972:1127" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="990:1044" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1062:1117" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1137:1317" ph="/// Initializes a new instance of the &lt;see cref=&quot;Manager&quot;/&gt; class. ... " />
+            <marker date="1487812827126" expanded="true" signature="1376:4511" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1429:4500" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1451:4391" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1582:4373" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1862:2040" ph="/* Then add the song's properties and tags as a dictionary to the master song list, with it's path as key? ... */" />
+            <marker date="1487812827126" expanded="true" signature="2842:3090" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="2930:3064" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="3174:3404" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="3234:3378" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="3549:3912" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="3583:3852" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="3980:4350" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="4014:4290" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="4521:4804" ph="/// Gets the song attribute value. ... " />
+            <marker date="1487812827126" expanded="true" signature="4871:5216" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="5004:5048" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="5134:5178" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="5226:5393" ph="/// Re-read the data from disk and updates the masterSongList dictionary  ... " />
+            <marker date="1487812827126" expanded="true" signature="5439:7715" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="5488:7705" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="6380:6596" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="6460:6578" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="6672:6870" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="6724:6852" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="7000:7312" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="7026:7260" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="7372:7691" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="7398:7639" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="7725:8037" ph="/// Edits/Adds the tag value. ... " />
+            <marker date="1487812827126" expanded="true" signature="8112:8551" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="8161:8540" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cleanup_my_music/App.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="78" lean-forward="true" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cleanup_my_music/Manager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <marker date="1487812827126" expanded="true" signature="6:105" ph="..." />
+            <marker date="1487812827126" expanded="true" signature="134:8559" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="141:369" ph="///This class should deal with meta data management things.  ... " />
+            <marker date="1487812827126" expanded="true" signature="388:8557" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="399:468" ph="/// The master song list ... " />
+            <marker date="1487812827126" expanded="true" signature="613:682" ph="/// The master path list ... " />
+            <marker date="1487812827126" expanded="true" signature="763:921" ph="/// Gets or sets the master path list. ... " />
+            <marker date="1487812827126" expanded="true" signature="972:1127" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="990:1044" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1062:1117" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1137:1317" ph="/// Initializes a new instance of the &lt;see cref=&quot;Manager&quot;/&gt; class. ... " />
+            <marker date="1487812827126" expanded="true" signature="1376:4511" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1429:4500" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1451:4391" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1582:4373" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1862:2040" ph="/* Then add the song's properties and tags as a dictionary to the master song list, with it's path as key? ... */" />
+            <marker date="1487812827126" expanded="true" signature="2842:3090" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="2930:3064" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="3174:3404" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="3234:3378" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="3549:3912" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="3583:3852" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="3980:4350" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="4014:4290" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="4521:4804" ph="/// Gets the song attribute value. ... " />
+            <marker date="1487812827126" expanded="true" signature="4871:5216" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="5004:5048" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="5134:5178" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="5226:5393" ph="/// Re-read the data from disk and updates the masterSongList dictionary  ... " />
+            <marker date="1487812827126" expanded="true" signature="5439:7715" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="5488:7705" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="6380:6596" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="6460:6578" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="6672:6870" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="6724:6852" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="7000:7312" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="7026:7260" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="7372:7691" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="7398:7639" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="7725:8037" ph="/// Edits/Adds the tag value. ... " />
+            <marker date="1487812827126" expanded="true" signature="8112:8551" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="8161:8540" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cleanup_my_music/FileSystem.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding>
+            <marker date="1487812827126" expanded="true" signature="6:97" ph="..." />
+            <marker date="1487812827126" expanded="true" signature="127:1268" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="133:243" ph="/// The FileSystem class will get all paths of files under a root folder. ... " />
+            <marker date="1487812827126" expanded="true" signature="279:1266" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="289:518" ph="/// Get all file paths under the root folder ... " />
+            <marker date="1487812827126" expanded="true" signature="583:1260" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="601:1093" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="830:883" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="945:1027" ph="{...}" />
+            <marker date="1487812827126" expanded="true" signature="1139:1250" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cleanup_my_music/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <folding>
+            <marker date="1487812827127" expanded="true" signature="6:101" ph="..." />
+            <marker date="1487812827127" expanded="true" signature="130:1999" ph="{...}" />
+            <marker date="1487812827127" expanded="true" signature="157:1997" ph="{...}" />
+            <marker date="1487812827127" expanded="true" signature="167:257" ph="/// The main entry point for the application. ... " />
+            <marker date="1487812827127" expanded="true" signature="305:1354" ph="{...}" />
+            <marker date="1487812827127" expanded="true" signature="521:953" ph="/* Debug goes below this line------------------------------------------------------ ... */" />
+            <marker date="1487812827127" expanded="true" signature="1204:1248" ph="{...}" />
+            <marker date="1487812827127" expanded="true" signature="1364:1613" ph="/// Tests the code run time. ... " />
+            <marker date="1487812827127" expanded="true" signature="1663:1991" ph="{...}" />
+            <marker date="1487812827127" expanded="true" signature="1766:1859" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
